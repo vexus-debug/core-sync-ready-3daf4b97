@@ -2,6 +2,38 @@ import Layout from "@/site/components/Layout";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle, Check } from "lucide-react";
+import shotDashboard from "@/assets/eye-sales/dashboard.png";
+import shotOverview from "@/assets/eye-sales/eye-overview.png";
+import shotExams from "@/assets/eye-sales/eye-exams.png";
+import shotCharts from "@/assets/eye-sales/eye-charts.png";
+import shotOrders from "@/assets/eye-sales/eye-orders.png";
+import shotPrescriptions from "@/assets/eye-sales/eye-prescriptions.png";
+
+const Screenshot = ({
+  src,
+  alt,
+  caption,
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+  className?: string;
+}) => (
+  <figure className={className}>
+    <div className="overflow-hidden rounded-2xl border border-primary/15 bg-background shadow-2xl shadow-primary/10">
+      <div className="flex items-center gap-1.5 border-b border-primary/10 bg-muted/40 px-4 py-2.5">
+        <span className="h-2.5 w-2.5 rounded-full bg-primary/25" />
+        <span className="h-2.5 w-2.5 rounded-full bg-primary/25" />
+        <span className="h-2.5 w-2.5 rounded-full bg-primary/25" />
+      </div>
+      <img src={src} alt={alt} loading="lazy" className="block w-full" />
+    </div>
+    {caption && (
+      <figcaption className="mt-3 text-center text-sm text-muted-foreground">{caption}</figcaption>
+    )}
+  </figure>
+);
 
 const WHATSAPP = "https://wa.me/2349017758165";
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -122,6 +154,21 @@ const EyeClinics = () => {
               the abstract and hoped to fit.
             </motion.p>
           </header>
+
+          {/* Hero product shot */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={viewport}
+            variants={reveal}
+            className="mb-24"
+          >
+            <Screenshot
+              src={shotDashboard}
+              alt="Clinexus dashboard showing revenue, patient stats and today's appointments for a demo eye clinic"
+              caption="The clinic dashboard — revenue, patients and today's schedule at a glance"
+            />
+          </motion.div>
 
           {/* Bento capabilities */}
           <motion.h2
@@ -270,6 +317,71 @@ const EyeClinics = () => {
                 pharmacy prescriptions, staff and schedules, and analytics across the whole clinic.
               </p>
             </motion.article>
+          </div>
+
+          {/* Product gallery */}
+          <motion.h2
+            initial="hidden"
+            whileInView="show"
+            viewport={viewport}
+            variants={reveal}
+            className="mb-4 text-2xl font-bold text-foreground md:text-3xl"
+          >
+            See it in action —{" "}
+            <span className="text-muted-foreground">real screens from a demo eye clinic</span>
+          </motion.h2>
+          <motion.p
+            initial="hidden"
+            whileInView="show"
+            viewport={viewport}
+            variants={reveal}
+            className="mb-10 max-w-2xl text-muted-foreground"
+          >
+            Every screen below is from a working demo clinic with real patient flow — not mockups.
+          </motion.p>
+
+          <div className="mb-24 grid gap-10 md:grid-cols-2">
+            <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={slide("left")}>
+              <Screenshot
+                src={shotOverview}
+                alt="Eye care overview with raised-IOP alerts and glaucoma watch lists"
+                caption="Eye care overview — raised-IOP alerts and glaucoma watch lists surface automatically"
+              />
+            </motion.div>
+            <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={slide("right")}>
+              <Screenshot
+                src={shotCharts}
+                alt="Trend charts for eye pressure, OCT and visual field results"
+                caption="Trend charts — IOP, OCT and visual field results plotted per eye over time"
+              />
+            </motion.div>
+            <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={slide("left")}>
+              <Screenshot
+                src={shotExams}
+                alt="Clinical exam records with vision and pressure readings"
+                caption="Exam records — visual acuity, IOP and refraction on one timeline"
+              />
+            </motion.div>
+            <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={slide("right")}>
+              <Screenshot
+                src={shotPrescriptions}
+                alt="Optical prescriptions with full lens details per eye"
+                caption="Prescriptions — sphere, cylinder, axis, add and PD per eye, with expiry tracked"
+              />
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={viewport}
+              variants={slide("up")}
+              className="md:col-span-2"
+            >
+              <Screenshot
+                src={shotOrders}
+                alt="Optical orders tracking frames and lenses through the lab"
+                caption="Optical orders — frames and lenses tracked from ordered to collected"
+              />
+            </motion.div>
           </div>
 
           {/* Pricing */}
