@@ -2,6 +2,38 @@ import Layout from "@/site/components/Layout";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle, Check } from "lucide-react";
+import shotDashboard from "@/assets/eye-sales/dashboard.png";
+import shotOverview from "@/assets/eye-sales/eye-overview.png";
+import shotExams from "@/assets/eye-sales/eye-exams.png";
+import shotCharts from "@/assets/eye-sales/eye-charts.png";
+import shotOrders from "@/assets/eye-sales/eye-orders.png";
+import shotPrescriptions from "@/assets/eye-sales/eye-prescriptions.png";
+
+const Screenshot = ({
+  src,
+  alt,
+  caption,
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+  className?: string;
+}) => (
+  <figure className={className}>
+    <div className="overflow-hidden rounded-2xl border border-primary/15 bg-background shadow-2xl shadow-primary/10">
+      <div className="flex items-center gap-1.5 border-b border-primary/10 bg-muted/40 px-4 py-2.5">
+        <span className="h-2.5 w-2.5 rounded-full bg-primary/25" />
+        <span className="h-2.5 w-2.5 rounded-full bg-primary/25" />
+        <span className="h-2.5 w-2.5 rounded-full bg-primary/25" />
+      </div>
+      <img src={src} alt={alt} loading="lazy" className="block w-full" />
+    </div>
+    {caption && (
+      <figcaption className="mt-3 text-center text-sm text-muted-foreground">{caption}</figcaption>
+    )}
+  </figure>
+);
 
 const WHATSAPP = "https://wa.me/2349017758165";
 const EASE = [0.22, 1, 0.36, 1] as const;
