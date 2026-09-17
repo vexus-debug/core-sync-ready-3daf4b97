@@ -319,6 +319,71 @@ const EyeClinics = () => {
             </motion.article>
           </div>
 
+          {/* Product gallery */}
+          <motion.h2
+            initial="hidden"
+            whileInView="show"
+            viewport={viewport}
+            variants={reveal}
+            className="mb-4 text-2xl font-bold text-foreground md:text-3xl"
+          >
+            See it in action —{" "}
+            <span className="text-muted-foreground">real screens from a demo eye clinic</span>
+          </motion.h2>
+          <motion.p
+            initial="hidden"
+            whileInView="show"
+            viewport={viewport}
+            variants={reveal}
+            className="mb-10 max-w-2xl text-muted-foreground"
+          >
+            Every screen below is from a working demo clinic with real patient flow — not mockups.
+          </motion.p>
+
+          <div className="mb-24 grid gap-10 md:grid-cols-2">
+            <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={slide("left")}>
+              <Screenshot
+                src={shotOverview}
+                alt="Eye care overview with raised-IOP alerts and glaucoma watch lists"
+                caption="Eye care overview — raised-IOP alerts and glaucoma watch lists surface automatically"
+              />
+            </motion.div>
+            <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={slide("right")}>
+              <Screenshot
+                src={shotCharts}
+                alt="Trend charts for eye pressure, OCT and visual field results"
+                caption="Trend charts — IOP, OCT and visual field results plotted per eye over time"
+              />
+            </motion.div>
+            <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={slide("left")}>
+              <Screenshot
+                src={shotExams}
+                alt="Clinical exam records with vision and pressure readings"
+                caption="Exam records — visual acuity, IOP and refraction on one timeline"
+              />
+            </motion.div>
+            <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={slide("right")}>
+              <Screenshot
+                src={shotPrescriptions}
+                alt="Optical prescriptions with full lens details per eye"
+                caption="Prescriptions — sphere, cylinder, axis, add and PD per eye, with expiry tracked"
+              />
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={viewport}
+              variants={slide("up")}
+              className="md:col-span-2"
+            >
+              <Screenshot
+                src={shotOrders}
+                alt="Optical orders tracking frames and lenses through the lab"
+                caption="Optical orders — frames and lenses tracked from ordered to collected"
+              />
+            </motion.div>
+          </div>
+
           {/* Pricing */}
           <motion.section
             initial="hidden"
