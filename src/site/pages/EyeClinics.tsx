@@ -8,6 +8,9 @@ import shotExams from "@/assets/eye-sales/eye-exams.png";
 import shotCharts from "@/assets/eye-sales/eye-charts.png";
 import shotOrders from "@/assets/eye-sales/eye-orders.png";
 import shotPrescriptions from "@/assets/eye-sales/eye-prescriptions.png";
+import shotSurgery from "@/assets/eye-sales/eye-surgery.png";
+import shotContactLenses from "@/assets/eye-sales/eye-contact-lenses.png";
+import shotAppointments from "@/assets/eye-sales/appointments.png";
 
 const Screenshot = ({
   src,
@@ -197,6 +200,11 @@ const EyeClinics = () => {
                 <h3 className="mb-2 mt-4 text-2xl font-bold text-card-foreground">
                   One record for every exam and refraction
                 </h3>
+                <Screenshot
+                  src={shotExams}
+                  alt="Eye exam records showing visual acuity and IOP readings per patient"
+                  className="mt-5"
+                />
                 <p className="mb-4 font-medium text-primary">
                   Stop reconstructing a patient's history from memory or a paper folder — it's all on one
                   timeline, trending automatically.
