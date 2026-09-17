@@ -155,6 +155,21 @@ const EyeClinics = () => {
             </motion.p>
           </header>
 
+          {/* Hero product shot */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={viewport}
+            variants={reveal}
+            className="mb-24"
+          >
+            <Screenshot
+              src={shotDashboard}
+              alt="Clinexus dashboard showing revenue, patient stats and today's appointments for a demo eye clinic"
+              caption="The clinic dashboard — revenue, patients and today's schedule at a glance"
+            />
+          </motion.div>
+
           {/* Bento capabilities */}
           <motion.h2
             initial="hidden"
