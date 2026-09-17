@@ -8,6 +8,9 @@ import shotExams from "@/assets/eye-sales/eye-exams.png";
 import shotCharts from "@/assets/eye-sales/eye-charts.png";
 import shotOrders from "@/assets/eye-sales/eye-orders.png";
 import shotPrescriptions from "@/assets/eye-sales/eye-prescriptions.png";
+import shotSurgery from "@/assets/eye-sales/eye-surgery.png";
+import shotContactLenses from "@/assets/eye-sales/eye-contact-lenses.png";
+import shotAppointments from "@/assets/eye-sales/appointments.png";
 
 const Screenshot = ({
   src,
@@ -197,6 +200,11 @@ const EyeClinics = () => {
                 <h3 className="mb-2 mt-4 text-2xl font-bold text-card-foreground">
                   One record for every exam and refraction
                 </h3>
+                <Screenshot
+                  src={shotExams}
+                  alt="Eye exam records showing visual acuity and IOP readings per patient"
+                  className="mt-5"
+                />
                 <p className="mb-4 font-medium text-primary">
                   Stop reconstructing a patient's history from memory or a paper folder — it's all on one
                   timeline, trending automatically.
@@ -235,6 +243,11 @@ const EyeClinics = () => {
             >
               <span className="font-display text-5xl font-bold opacity-20">02</span>
               <h3 className="mb-2 mt-4 text-2xl font-bold">Diagnostic results that plot themselves</h3>
+              <Screenshot
+                src={shotCharts}
+                alt="Eye charts plotting IOP, OCT and visual field trends over time"
+                className="mt-5"
+              />
               <p className="mb-4 font-medium opacity-80">
                 Catch slow changes — like early glaucoma progression — before they become obvious in a single
                 visit.
@@ -260,6 +273,11 @@ const EyeClinics = () => {
               <h3 className="mb-2 mt-4 text-xl font-bold text-card-foreground">
                 Dispensing that tracks itself
               </h3>
+              <Screenshot
+                src={shotContactLenses}
+                alt="Contact lens fittings with brand, base curve and aftercare dates"
+                className="mt-5"
+              />
               <p className="mb-2 font-medium text-primary">
                 Know the status of every fitting and order without opening a chat thread.
               </p>
@@ -285,6 +303,11 @@ const EyeClinics = () => {
               <h3 className="mb-2 mt-4 text-xl font-bold text-card-foreground">
                 Surgery bookings with nothing left loose
               </h3>
+              <Screenshot
+                src={shotSurgery}
+                alt="Surgery bookings list with procedure, theatre and IOL details"
+                className="mt-5"
+              />
               <p className="mb-2 font-medium text-primary">
                 Everything surgery day needs is attached to the booking, not scattered across folders.
               </p>
@@ -309,6 +332,11 @@ const EyeClinics = () => {
               <h3 className="mb-2 mt-4 text-xl font-bold">
                 The rest of the clinic, not bolted on separately
               </h3>
+              <Screenshot
+                src={shotAppointments}
+                alt="Appointments schedule for the demo clinic"
+                className="mt-5"
+              />
               <p className="mb-2 font-medium opacity-80">
                 One system instead of three or four you have to keep in sync.
               </p>
